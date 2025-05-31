@@ -11,8 +11,8 @@ import { store } from "./store/store";
 
 // Pages
 import LandingPage from "./pages/LandingPage";
-import CheckoutPage from "./pages/CheckoutPage";
-import ThankYouPage from "./pages/ThankYouPage";
+import CheckoutPage from "./pages/CheckoutPage.jsx";
+import ThankYouPage from "./pages/ThankyouPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage";
 
 // Components
