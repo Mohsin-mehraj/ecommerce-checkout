@@ -47,22 +47,6 @@ app.get("/", (req, res) => {
     endpoints: {
       products: "/api/products",
       orders: "/api/orders",
-      health: "/health",
-    },
-    documentation: {
-      products: {
-        "GET /api/products": "Get all products",
-        "GET /api/products/:id": "Get single product",
-        "POST /api/products/:id/check-stock": "Check stock availability",
-        "GET /api/products/admin/inventory": "Get inventory status",
-        "POST /api/products/admin/reset-inventory": "Reset inventory",
-      },
-      orders: {
-        "POST /api/orders": "Create new order (checkout)",
-        "GET /api/orders/:orderNumber": "Get order details",
-        "GET /api/orders": "Get all orders (admin)",
-        "POST /api/orders/clear-session": "Clear session for new order",
-      },
     },
     features: {
       transactionSimulation: "Card ending in 1=Approved, 2=Declined, 3=Error",
@@ -77,24 +61,11 @@ app.get("/", (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`
-🚀 Server is running on port ${PORT}
-
-  `);
-});
-
-// Handle unhandled promise rejections
-process.on("unhandledRejection", (err, promise) => {
-  console.log(`Unhandled Rejection: ${err.message}`);
-  process.exit(1);
-});
-
-// Handle uncaught exceptions
-process.on("uncaughtException", (err) => {
-  console.log(`Uncaught Exception: ${err.message}`);
-  process.exit(1);
-});
+// Only start server if not in Vercel environment
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server is running on port ${PORT}`);
+  });
+}
 
 module.exports = app;
