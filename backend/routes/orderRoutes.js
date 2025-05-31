@@ -6,7 +6,7 @@ const {
   handleValidationErrors,
 } = require("../middleware/validation");
 
-// POST /api/orders - Create new order (checkout)
+// POST - Create new order (checkout)
 router.post(
   "/",
   validateCheckoutForm,
@@ -14,10 +14,10 @@ router.post(
   orderController.createOrder
 );
 
-// POST /api/orders/clear-session - Clear session for new order
+// POST  - Clear session for new order
 router.post("/clear-session", orderController.clearSession);
 
-// GET /api/orders/:orderNumber - Get order by order number
+// GET - Get order by order number
 router.get("/:orderNumber", orderController.getOrderByNumber);
 
 module.exports = router;
