@@ -20,7 +20,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:5173",
-      "https://ecommerce-checkout-w68p-p1n0s4tc0-mohsin-mehrajs-projects.vercel.app",
+      "https://ecommerce-checkout-w68p.vercel.app",
       process.env.FRONTEND_URL,
     ].filter(Boolean),
     credentials: true,
