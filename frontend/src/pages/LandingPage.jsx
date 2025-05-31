@@ -26,7 +26,7 @@ import ErrorMessage from "../components/UI/ErrorMessage";
 import ProductCard from "../components/Product/ProductCard";
 import VariantSelector from "../components/Product/VariantSelector";
 import QuantitySelector from "../components/Product/QuantitySelector";
-import OrderSummary from "../components/Cart/OrderSummary";
+import OrderSummary from "../components/Cart/OrderSummary.jsx";
 
 const LandingPage = () => {
   const dispatch = useDispatch();

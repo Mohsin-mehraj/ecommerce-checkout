@@ -10,14 +10,13 @@ import { Toaster } from "react-hot-toast";
 import { store } from "./store/store";
 
 // Pages
-import LandingPage from "./pages/LandingPage";
-import CheckoutPage from "./pages/CheckoutPage.jsx";
+import LandingPage from "./pages/LandingPage.jsx";
+import CheckoutPage from "./pages/CheckOutPage.jsx";
 import ThankYouPage from "./pages/ThankyouPage.jsx";
-import NotFoundPage from "./pages/NotFoundPage";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 // Components
 import Layout from "./components/Layout/Layout";
-import LoadingSpinner from "./components/UI/LoadingSpinner";
 import ErrorBoundary from "./components/UI/ErrorBoundary";
 
 // Styles
