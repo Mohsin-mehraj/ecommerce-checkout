@@ -1,0 +1,18 @@
+{
+    "sourceFile": "backend/server.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1748691732105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1748691732104,
+            "name": "Commit-0",
+            "content": "const express = require(\"express\");\r\nconst cors = require(\"cors\");\r\n\r\nconst app = express();\r\n\r\napp.use(cors());\r\napp.use(express.json());\r\n\r\n// Test route\r\napp.get(\"/\", (req, res) => {\r\n  res.json({ message: \"Backend is working!\" });\r\n});\r\n\r\napp.get(\"/api/test\", (req, res) => {\r\n  res.json({ message: \"API is working!\" });\r\n});\r\n\r\n// Test products route\r\napp.get(\"/api/products\", (req, res) => {\r\n  res.json({ \r\n    success: true,\r\n    data: [\r\n      { id: 1, title: \"Test Product\", price: 99.99 }\r\n    ]\r\n  });\r\n});\r\n\r\n// Test orders route  \r\napp.post(\"/api/orders\", (req, res) => {\r\n  res.json({\r\n    success: true,\r\n    message: \"Order test endpoint working\"\r\n  });\r\n});\r\n\r\nmodule.exports = app;"
+        }
+    ]
+}
