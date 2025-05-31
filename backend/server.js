@@ -1,0 +1,99 @@
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const helmet = require("helmet");
+const morgan = require("morgan");
+
+const productRoutes = require("./routes/productRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+
+// Import middleware
+const { errorHandler, notFound } = require("./middleware/errorHandler");
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.use(helmet());
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      process.env.FRONTEND_URL,
+    ].filter(Boolean),
+    credentials: true,
+  })
+);
+
+// Logging middleware
+app.use(morgan("combined"));
+
+// Body parsing middleware
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true }));
+
+// API routes
+app.use("/api/products", productRoutes);
+app.use("/api/orders", orderRoutes);
+
+// Welcome message for root endpoint
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Welcome to E-Commerce API",
+    version: "1.0.0",
+    endpoints: {
+      products: "/api/products",
+      orders: "/api/orders",
+      health: "/health",
+    },
+    documentation: {
+      products: {
+        "GET /api/products": "Get all products",
+        "GET /api/products/:id": "Get single product",
+        "POST /api/products/:id/check-stock": "Check stock availability",
+        "GET /api/products/admin/inventory": "Get inventory status",
+        "POST /api/products/admin/reset-inventory": "Reset inventory",
+      },
+      orders: {
+        "POST /api/orders": "Create new order (checkout)",
+        "GET /api/orders/:orderNumber": "Get order details",
+        "GET /api/orders": "Get all orders (admin)",
+        "POST /api/orders/clear-session": "Clear session for new order",
+      },
+    },
+    features: {
+      transactionSimulation: "Card ending in 1=Approved, 2=Declined, 3=Error",
+      inventoryManagement: "Real-time stock tracking and updates",
+      orderProcessing: "Complete order lifecycle management",
+      emailNotifications: "Mailtrap integration for order emails",
+    },
+  });
+});
+
+// Error handling middleware (must be last)
+app.use(notFound);
+app.use(errorHandler);
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`
+🚀 Server is running on port ${PORT}
+
+  `);
+});
+
+// Handle unhandled promise rejections
+process.on("unhandledRejection", (err, promise) => {
+  console.log(`Unhandled Rejection: ${err.message}`);
+  process.exit(1);
+});
+
+// Handle uncaught exceptions
+process.on("uncaughtException", (err) => {
+  console.log(`Uncaught Exception: ${err.message}`);
+  process.exit(1);
+});
+
+module.exports = app;

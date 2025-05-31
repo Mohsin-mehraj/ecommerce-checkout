@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "Premium Wireless Headphones",
+    "description": "Experience crystal-clear audio with our premium wireless headphones featuring active noise cancellation, 30-hour battery life, and premium comfort padding. Perfect for music lovers, gamers, and professionals.",
+    "price": 199.99,
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": ["Black", "White", "Blue"]
+      },
+      {
+        "type": "size",
+        "label": "Size",
+        "options": ["Regular", "Large"]
+      }
+    ],
+    "inventory": {
+      "Black-Regular": 15,
+      "Black-Large": 8,
+      "White-Regular": 12,
+      "White-Large": 5,
+      "Blue-Regular": 10,
+      "Blue-Large": 3
+    }
+  },
+  {
+    "id": 2,
+    "title": "Smart Fitness Watch",
+    "description": "Track your fitness journey with our advanced smartwatch. Features heart rate monitoring, GPS tracking, sleep analysis, and 7-day battery life. Compatible with iOS and Android.",
+    "price": 299.99,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": ["Black", "Silver", "Rose Gold"]
+      },
+      {
+        "type": "band",
+        "label": "Band Type",
+        "options": ["Sport", "Leather", "Metal"]
+      }
+    ],
+    "inventory": {
+      "Black-Sport": 20,
+      "Black-Leather": 10,
+      "Black-Metal": 8,
+      "Silver-Sport": 15,
+      "Silver-Leather": 7,
+      "Silver-Metal": 12,
+      "Rose Gold-Sport": 18,
+      "Rose Gold-Leather": 6,
+      "Rose Gold-Metal": 4
+    }
+  },
+  {
+    "id": 3,
+    "title": "Vintage Leather Backpack",
+    "description": "Handcrafted vintage leather backpack perfect for daily commuting, travel, or outdoor adventures. Features multiple compartments, laptop sleeve, and water-resistant coating.",
+    "price": 129.99,
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": ["Brown", "Black", "Tan"]
+      },
+      {
+        "type": "size",
+        "label": "Size",
+        "options": ["Small", "Medium", "Large"]
+      }
+    ],
+    "inventory": {
+      "Brown-Small": 8,
+      "Brown-Medium": 12,
+      "Brown-Large": 6,
+      "Black-Small": 10,
+      "Black-Medium": 15,
+      "Black-Large": 9,
+      "Tan-Small": 5,
+      "Tan-Medium": 8,
+      "Tan-Large": 4
+    }
+  },
+  {
+    "id": 4,
+    "title": "Organic Cotton T-Shirt",
+    "description": "Sustainable and comfortable organic cotton t-shirt. Soft, breathable, and ethically made. Perfect for casual wear with a modern fit that's neither too tight nor too loose.",
+    "price": 29.99,
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": ["White", "Black", "Navy", "Gray"]
+      },
+      {
+        "type": "size",
+        "label": "Size",
+        "options": ["XS", "S", "M", "L", "XL", "XXL"]
+      }
+    ],
+    "inventory": {
+      "White-XS": 5,
+      "White-S": 12,
+      "White-M": 18,
+      "White-L": 15,
+      "White-XL": 10,
+      "White-XXL": 6,
+      "Black-XS": 8,
+      "Black-S": 15,
+      "Black-M": 20,
+      "Black-L": 18,
+      "Black-XL": 12,
+      "Black-XXL": 8,
+      "Navy-XS": 6,
+      "Navy-S": 10,
+      "Navy-M": 14,
+      "Navy-L": 12,
+      "Navy-XL": 8,
+      "Navy-XXL": 4,
+      "Gray-XS": 4,
+      "Gray-S": 8,
+      "Gray-M": 12,
+      "Gray-L": 10,
+      "Gray-XL": 6,
+      "Gray-XXL": 3
+    }
+  }
+]
