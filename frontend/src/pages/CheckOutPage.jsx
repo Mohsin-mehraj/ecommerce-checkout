@@ -22,7 +22,7 @@ import {
 } from "../store/slices/cartSlice";
 
 // Components
-import OrderSummary from "../components/Cart/OrderSummary.jsx";
+import OrderSummary from "../components/Cart/OrderSummary";
 import LoadingSpinner from "../components/UI/LoadingSpinner.jsx";
 import FormInput from "../components/Forms/FormInput";
 
